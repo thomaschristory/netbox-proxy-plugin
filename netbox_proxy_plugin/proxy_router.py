@@ -3,11 +3,11 @@ from urllib.parse import urlparse
 
 class PluginProxyRouter:
     """
-    A proxy router that resolves proxies from the netbox_proxies plugin database.
+    A proxy router that resolves proxies from the netbox_proxy_plugin plugin database.
 
     Add to your NetBox configuration:
         PROXY_ROUTERS = [
-            "netbox_proxies.proxy_router.PluginProxyRouter",
+            "netbox_proxy_plugin.proxy_router.PluginProxyRouter",
             "utilities.proxy.DefaultProxyRouter",
         ]
     """

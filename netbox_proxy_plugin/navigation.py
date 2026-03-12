@@ -4,17 +4,17 @@ from utilities.choices import ButtonColorChoices
 
 proxy_items = (
     PluginMenuItem(
-        link="plugins:netbox_proxies:proxy_list",
+        link="plugins:netbox_proxy_plugin:proxy_list",
         link_text="Proxies",
         buttons=(
             PluginMenuButton(
-                link="plugins:netbox_proxies:proxy_add",
+                link="plugins:netbox_proxy_plugin:proxy_add",
                 title="Add",
                 icon_class="mdi mdi-plus-thick",
                 color=ButtonColorChoices.GREEN,
             ),
             PluginMenuButton(
-                link="plugins:netbox_proxies:proxy_import",
+                link="plugins:netbox_proxy_plugin:proxy_import",
                 title="Import",
                 icon_class="mdi mdi-upload",
                 color=ButtonColorChoices.CYAN,

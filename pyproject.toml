@@ -25,7 +25,7 @@ Repository = "https://github.com/thomaschristory/netbox-proxy-plugin"
 Issues = "https://github.com/thomaschristory/netbox-proxy-plugin/issues"
 
 [tool.hatch.build.targets.wheel]
-packages = ["netbox_proxies"]
+packages = ["netbox_proxy_plugin"]
 
 [tool.hatch.build.targets.sdist]
-include = ["netbox_proxies/**", "LICENSE", "README.md"]
+include = ["netbox_proxy_plugin/**", "LICENSE", "README.md"]

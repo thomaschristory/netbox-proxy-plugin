@@ -1,8 +1,8 @@
 from netbox.plugins import PluginConfig
 
 
-class NetboxProxiesConfig(PluginConfig):
-    name = "netbox_proxies"
+class NetboxProxyPluginConfig(PluginConfig):
+    name = "netbox_proxy_plugin"
     verbose_name = "Proxies"
     description = "Manage HTTP proxy configurations for NetBox"
     version = "0.1.0"
@@ -11,4 +11,4 @@ class NetboxProxiesConfig(PluginConfig):
     min_version = "4.2.0"
 
 
-config = NetboxProxiesConfig
+config = NetboxProxyPluginConfig

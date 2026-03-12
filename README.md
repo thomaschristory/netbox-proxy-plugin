@@ -41,7 +41,7 @@ Add to your NetBox `configuration.py`:
 
 ```python
 PLUGINS = [
-    "netbox_proxies",
+    "netbox_proxy_plugin",
 ]
 ```
 
@@ -66,7 +66,7 @@ To have NetBox resolve proxies from the plugin database, add the `PluginProxyRou
 
 ```python
 PROXY_ROUTERS = [
-    "netbox_proxies.proxy_router.PluginProxyRouter",
+    "netbox_proxy_plugin.proxy_router.PluginProxyRouter",
     "utilities.proxy.DefaultProxyRouter",
 ]
 ```

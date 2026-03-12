@@ -7,7 +7,7 @@ Guidelines for AI agents and contributors working on this project.
 **netbox-proxy-plugin** is a NetBox plugin that provides a web UI and REST API for managing HTTP proxy configurations. It integrates with NetBox's `PROXY_ROUTERS` system (introduced in NetBox v4.3) to allow administrators to define and manage proxy settings from within the NetBox interface.
 
 - **Target compatibility**: NetBox 4.4, 4.5, and newer
-- **Python package name**: `netbox_proxies`
+- **Python package name**: `netbox_proxy_plugin`
 - **Repository**: `thomaschristory/netbox-proxy-plugin`
 
 ## Code Principles
@@ -43,7 +43,7 @@ Guidelines for AI agents and contributors working on this project.
 netbox-proxy-plugin/           # Repository root
 ├── .github/
 │   └── GUIDELINES.md          # This file
-├── netbox_proxies/            # Python package
+├── netbox_proxy_plugin/       # Python package
 │   ├── api/
 │   │   ├── __init__.py
 │   │   ├── serializers.py
@@ -52,7 +52,7 @@ netbox-proxy-plugin/           # Repository root
 │   ├── migrations/
 │   │   └── ...
 │   ├── templates/
-│   │   └── netbox_proxies/
+│   │   └── netbox_proxy_plugin/
 │   │       └── ...
 │   ├── __init__.py            # PluginConfig
 │   ├── filtersets.py
@@ -111,7 +111,7 @@ netbox-proxy-plugin/           # Repository root
 
 ## Testing
 
-- Tests go in `netbox_proxies/tests/`.
+- Tests go in `netbox_proxy_plugin/tests/`.
 - Test models, views, API endpoints, and the proxy router.
 - Run tests with the NetBox test runner.
 
@@ -129,6 +129,6 @@ These must be in `.gitignore`:
 
 ## Release Process
 
-- Version is defined in `pyproject.toml` and `netbox_proxies/__init__.py`.
+- Version is defined in `pyproject.toml` and `netbox_proxy_plugin/__init__.py`.
 - Tag releases with `v` prefix: `v0.1.0`.
 - Follow semantic versioning.

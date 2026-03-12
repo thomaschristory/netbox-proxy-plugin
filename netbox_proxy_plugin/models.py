@@ -50,7 +50,7 @@ class Proxy(NetBoxModel):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("plugins:netbox_proxies:proxy", args=[self.pk])
+        return reverse("plugins:netbox_proxy_plugin:proxy", args=[self.pk])
 
     @property
     def url(self):

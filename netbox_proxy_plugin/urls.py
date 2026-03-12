@@ -5,5 +5,5 @@ from utilities.urls import get_model_urls
 from . import models
 
 urlpatterns = [
-    *get_model_urls("netbox_proxies", models.Proxy),
+    *get_model_urls("netbox_proxy_plugin", models.Proxy),
 ]
