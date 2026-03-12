@@ -1,4 +1,5 @@
 import django_filters
+from django.db.models import Q
 from netbox.filtersets import NetBoxModelFilterSet
 
 from .models import Proxy, ProxyProtocolChoices, ProxyRoutingChoices
@@ -10,7 +11,7 @@ class ProxyFilterSet(NetBoxModelFilterSet):
     )
     routing = django_filters.MultipleChoiceFilter(
         choices=ProxyRoutingChoices,
-        lookup_expr="contains",
+        method="filter_routing",
     )
 
     class Meta:
@@ -19,3 +20,11 @@ class ProxyFilterSet(NetBoxModelFilterSet):
 
     def search(self, queryset, name, value):
         return queryset.filter(name__icontains=value)
+
+    def filter_routing(self, queryset, name, value):
+        if not value:
+            return queryset
+        q = Q()
+        for v in value:
+            q |= Q(routing__contains=[v])
+        return queryset.filter(q)
