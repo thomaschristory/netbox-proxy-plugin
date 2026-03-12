@@ -22,6 +22,9 @@ class ProxyRoutingChoices(ChoiceSet):
     CHOICES = [
         ("webhooks", "Webhooks", "blue"),
         ("data_backends", "Data Backends", "green"),
+        ("release_check", "Release Check", "cyan"),
+        ("plugin_catalog", "Plugin Catalog", "teal"),
+        ("dashboard_feed", "Dashboard Feed", "orange"),
     ]
 
 
@@ -74,3 +77,8 @@ class Proxy(NetBoxModel):
         if self.username:
             return f"{self.protocol}://{self.username}:{self.password}@{self.server}:{self.port}"
         return f"{self.protocol}://{self.server}:{self.port}"
+
+    def get_routing_badges(self):
+        """Return (label, color) tuples for each routing value."""
+        lookup = {c[0]: (c[1], c[2]) for c in ProxyRoutingChoices.CHOICES}
+        return [lookup.get(v, (v, "gray")) for v in self.routing]

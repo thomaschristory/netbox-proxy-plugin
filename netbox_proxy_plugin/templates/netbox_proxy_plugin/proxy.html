@@ -35,9 +35,8 @@
                     <th scope="row">Routing</th>
                     <td>
                         {% if object.routing %}
-                            {% for r in object.routing %}
-                                {% if r == "webhooks" %}{% badge "Webhooks" bg_color="blue" %}{% endif %}
-                                {% if r == "data_backends" %}{% badge "Data Backends" bg_color="green" %}{% endif %}
+                            {% for label, color in object.get_routing_badges %}
+                                {% badge label bg_color=color %}
                             {% endfor %}
                         {% else %}
                             {% badge "All" bg_color="gray" %}
