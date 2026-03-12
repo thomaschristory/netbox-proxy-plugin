@@ -37,6 +37,9 @@ Thumbs.db
 uv.lock
 .python-version
 
+# Local dev environment
+dev/
+
 # Testing
 .tox/
 .coverage
