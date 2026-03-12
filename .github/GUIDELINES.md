@@ -4,7 +4,7 @@ Guidelines for AI agents and contributors working on this project.
 
 ## Project Overview
 
-**netbox-proxy-plugin** is a NetBox plugin that provides a web UI and REST API for managing HTTP proxy configurations. It integrates with NetBox's `PROXY_ROUTERS` system (introduced in NetBox v4.3) to allow administrators to define and manage proxy settings from within the NetBox interface.
+**netbox-proxy-plugin** is a NetBox plugin that provides a web UI and REST API for managing HTTP proxy configurations. On NetBox 4.5+, the plugin integrates with NetBox's `PROXY_ROUTERS` system to dynamically resolve proxies from the database. On NetBox 4.4, the plugin provides the management UI and API only (4.4 does not have `PROXY_ROUTERS`).
 
 - **Target compatibility**: NetBox 4.4, 4.5, and newer
 - **Python package name**: `netbox_proxy_plugin`
@@ -43,6 +43,10 @@ Guidelines for AI agents and contributors working on this project.
 netbox-proxy-plugin/           # Repository root
 ├── .github/
 │   └── GUIDELINES.md          # This file
+├── dev/                       # Docker-based dev environment
+│   ├── docker-compose.yml
+│   ├── Dockerfile
+│   └── start.sh
 ├── netbox_proxy_plugin/       # Python package
 │   ├── api/
 │   │   ├── __init__.py
@@ -53,17 +57,19 @@ netbox-proxy-plugin/           # Repository root
 │   │   └── ...
 │   ├── templates/
 │   │   └── netbox_proxy_plugin/
-│   │       └── ...
+│   │       └── proxy.html     # Detail view template
 │   ├── __init__.py            # PluginConfig
 │   ├── filtersets.py
 │   ├── forms.py
-│   ├── models.py
+│   ├── models.py              # Proxy model, ChoiceSets
 │   ├── navigation.py
+│   ├── proxy_router.py        # PluginProxyRouter (PROXY_ROUTERS)
 │   ├── tables.py
 │   ├── urls.py
 │   └── views.py
 ├── .gitignore
 ├── pyproject.toml
+├── CHANGELOG.md
 ├── LICENSE
 └── README.md
 ```
