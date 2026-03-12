@@ -1,7 +1,7 @@
 from netbox.api.viewsets import NetBoxModelViewSet
 
-from ..models import Proxy
 from ..filtersets import ProxyFilterSet
+from ..models import Proxy
 from .serializers import ProxySerializer
 
 

@@ -1,4 +1,4 @@
-from netbox.forms import NetBoxModelForm, NetBoxModelFilterSetForm, NetBoxModelImportForm
+from netbox.forms import NetBoxModelFilterSetForm, NetBoxModelForm, NetBoxModelImportForm
 from utilities.forms.fields import CommentField
 
 from .models import Proxy, ProxyProtocolChoices
