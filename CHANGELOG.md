@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2025-03-12
+
+### Changed
+
+- Rewrite README with routing choices, subsystem detection, 4.4 vs 4.5 differences, and dev environment docs
+- Expand CHANGELOG with routing, ArrayField filter, and dual compatibility entries
+- Fix GUIDELINES project structure and correct PROXY_ROUTERS version reference
+
 ## [0.1.0] - 2025-03-12
 
 ### Added
@@ -29,5 +37,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Docker-based development environment (`dev/`)
 - Dual compatibility: installs on NetBox 4.4 (UI & API), full routing on 4.5+
 
-[Unreleased]: https://github.com/thomaschristory/netbox-proxy-plugin/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/thomaschristory/netbox-proxy-plugin/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/thomaschristory/netbox-proxy-plugin/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/thomaschristory/netbox-proxy-plugin/releases/tag/v0.1.0
