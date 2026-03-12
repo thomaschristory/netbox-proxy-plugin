@@ -1,3 +1,4 @@
+from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.urls import reverse
 from netbox.models import NetBoxModel
@@ -12,6 +13,15 @@ class ProxyProtocolChoices(ChoiceSet):
         ("https", "HTTPS", "green"),
         ("socks4", "SOCKS4", "orange"),
         ("socks5", "SOCKS5", "purple"),
+    ]
+
+
+class ProxyRoutingChoices(ChoiceSet):
+    key = "Proxy.routing"
+
+    CHOICES = [
+        ("webhooks", "Webhooks", "blue"),
+        ("data_backends", "Data Backends", "green"),
     ]
 
 
@@ -36,6 +46,12 @@ class Proxy(NetBoxModel):
     password = models.CharField(
         max_length=255,
         blank=True,
+    )
+    routing = ArrayField(
+        base_field=models.CharField(max_length=50),
+        blank=True,
+        default=list,
+        help_text="NetBox subsystems that should use this proxy. Leave empty for all.",
     )
     description = models.CharField(
         max_length=200,

@@ -9,7 +9,7 @@ class ProxyView(generic.ObjectView):
     queryset = models.Proxy.objects.all()
 
 
-@register_model_view(models.Proxy, "list", path="")
+@register_model_view(models.Proxy, "list", path="", detail=False)
 class ProxyListView(generic.ObjectListView):
     queryset = models.Proxy.objects.all()
     table = tables.ProxyTable
@@ -17,7 +17,8 @@ class ProxyListView(generic.ObjectListView):
     filterset_form = forms.ProxyFilterForm
 
 
-@register_model_view(models.Proxy, "add")
+@register_model_view(models.Proxy, "add", detail=False)
+@register_model_view(models.Proxy, "edit")
 class ProxyEditView(generic.ObjectEditView):
     queryset = models.Proxy.objects.all()
     form = forms.ProxyForm
@@ -28,13 +29,13 @@ class ProxyDeleteView(generic.ObjectDeleteView):
     queryset = models.Proxy.objects.all()
 
 
-@register_model_view(models.Proxy, "bulk_import")
+@register_model_view(models.Proxy, "bulk_import", detail=False)
 class ProxyBulkImportView(generic.BulkImportView):
     queryset = models.Proxy.objects.all()
     model_form = forms.ProxyImportForm
 
 
-@register_model_view(models.Proxy, "bulk_edit")
+@register_model_view(models.Proxy, "bulk_edit", detail=False)
 class ProxyBulkEditView(generic.BulkEditView):
     queryset = models.Proxy.objects.all()
     filterset = filtersets.ProxyFilterSet
@@ -42,7 +43,7 @@ class ProxyBulkEditView(generic.BulkEditView):
     form = forms.ProxyForm
 
 
-@register_model_view(models.Proxy, "bulk_delete")
+@register_model_view(models.Proxy, "bulk_delete", detail=False)
 class ProxyBulkDeleteView(generic.BulkDeleteView):
     queryset = models.Proxy.objects.all()
     filterset = filtersets.ProxyFilterSet

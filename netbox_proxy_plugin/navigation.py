@@ -1,5 +1,5 @@
-from netbox.plugins import PluginMenu, PluginMenuButton, PluginMenuItem
 from netbox.choices import ButtonColorChoices
+from netbox.plugins import PluginMenu, PluginMenuButton, PluginMenuItem
 
 proxy_items = (
     PluginMenuItem(
@@ -13,7 +13,7 @@ proxy_items = (
                 color=ButtonColorChoices.GREEN,
             ),
             PluginMenuButton(
-                link="plugins:netbox_proxy_plugin:proxy_import",
+                link="plugins:netbox_proxy_plugin:proxy_bulk_import",
                 title="Import",
                 icon_class="mdi mdi-upload",
                 color=ButtonColorChoices.CYAN,

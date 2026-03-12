@@ -10,7 +10,7 @@ class NetboxProxyPluginConfig(PluginConfig):
     version = __version__
     author = "thomaschristory"
     base_url = "proxies"
-    min_version = "4.2.0"
+    min_version = "4.4.0"
 
 
 config = NetboxProxyPluginConfig

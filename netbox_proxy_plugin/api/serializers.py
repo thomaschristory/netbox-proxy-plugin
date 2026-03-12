@@ -15,6 +15,7 @@ class ProxySerializer(NetBoxModelSerializer):
             "server",
             "port",
             "username",
+            "routing",
             "description",
             "tags",
             "custom_fields",

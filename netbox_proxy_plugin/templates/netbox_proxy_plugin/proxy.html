@@ -32,6 +32,19 @@
                     <td><code>{{ object.url }}</code></td>
                 </tr>
                 <tr>
+                    <th scope="row">Routing</th>
+                    <td>
+                        {% if object.routing %}
+                            {% for r in object.routing %}
+                                {% if r == "webhooks" %}{% badge "Webhooks" bg_color="blue" %}{% endif %}
+                                {% if r == "data_backends" %}{% badge "Data Backends" bg_color="green" %}{% endif %}
+                            {% endfor %}
+                        {% else %}
+                            {% badge "All" bg_color="gray" %}
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
                     <th scope="row">Description</th>
                     <td>{{ object.description|placeholder }}</td>
                 </tr>
