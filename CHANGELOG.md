@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2] - 2025-03-12
+
+### Changed
+
+- Move Proxies from dedicated top-level menu to shared Plugins submenu (#8)
+- Add issue-first change workflow to development guidelines
+
 ## [0.1.1] - 2025-03-12
 
 ### Changed
@@ -37,6 +44,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Docker-based development environment (`dev/`)
 - Dual compatibility: installs on NetBox 4.4 (UI & API), full routing on 4.5+
 
-[Unreleased]: https://github.com/thomaschristory/netbox-proxy-plugin/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/thomaschristory/netbox-proxy-plugin/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/thomaschristory/netbox-proxy-plugin/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/thomaschristory/netbox-proxy-plugin/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/thomaschristory/netbox-proxy-plugin/releases/tag/v0.1.0

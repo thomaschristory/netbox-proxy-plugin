@@ -1,7 +1,7 @@
 from netbox.choices import ButtonColorChoices
-from netbox.plugins import PluginMenu, PluginMenuButton, PluginMenuItem
+from netbox.plugins import PluginMenuButton, PluginMenuItem
 
-proxy_items = (
+menu_items = (
     PluginMenuItem(
         link="plugins:netbox_proxy_plugin:proxy_list",
         link_text="Proxies",
@@ -20,10 +20,4 @@ proxy_items = (
             ),
         ),
     ),
-)
-
-menu = PluginMenu(
-    label="Proxies",
-    groups=(("Proxy Management", proxy_items),),
-    icon_class="mdi mdi-server-network",
 )

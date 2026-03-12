@@ -133,6 +133,19 @@ These must be in `.gitignore`:
 - IDE files (`.idea/`, `.vscode/`, `.fleet/`)
 - OS files (`.DS_Store`, `Thumbs.db`)
 
+## Change Workflow
+
+Every non-trivial change follows this process:
+
+1. **Issue** — Create a GitHub issue describing the problem or feature.
+2. **Code** — Implement the fix or feature, referencing the issue number.
+3. **Test** — Verify the change works (Docker dev environment, API tests).
+4. **Push** — Commit with a message referencing the issue: `Fix navigation nesting (#8)`.
+5. **Tag** — Bump version, create an annotated tag: `git tag -a v0.1.2 -m "v0.1.2"`.
+6. **Release** — Push the tag: `git push origin main --tags`.
+
+Trivial fixes (typos, formatting) can skip the issue step.
+
 ## Release Process
 
 - Version is defined in `pyproject.toml` and `netbox_proxy_plugin/__init__.py`.
