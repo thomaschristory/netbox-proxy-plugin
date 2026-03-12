@@ -30,6 +30,10 @@ Thumbs.db
 # AI / MCP
 .mcp.json
 
+# uv
+uv.lock
+.python-version
+
 # Testing
 .tox/
 .coverage
