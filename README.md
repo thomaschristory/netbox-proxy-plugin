@@ -1,5 +1,8 @@
 # netbox-proxy-plugin
 
+[![CI](https://github.com/thomaschristory/netbox-proxy-plugin/actions/workflows/ci.yml/badge.svg)](https://github.com/thomaschristory/netbox-proxy-plugin/actions/workflows/ci.yml)
+[![License](https://img.shields.io/github/license/thomaschristory/netbox-proxy-plugin)](https://github.com/thomaschristory/netbox-proxy-plugin/blob/main/LICENSE)
+
 A [NetBox](https://github.com/netbox-community/netbox) plugin for managing HTTP proxy configurations through the NetBox web interface and REST API.
 
 This plugin integrates with NetBox's [proxy routing system](https://github.com/netbox-community/netbox/pull/18681) (`PROXY_ROUTERS`), allowing you to define and manage proxy configurations from the database instead of static configuration files.
@@ -19,6 +22,11 @@ This plugin integrates with NetBox's [proxy routing system](https://github.com/n
 - Filtering and search
 - Optional proxy router that resolves proxies from the plugin database
 - Tags and custom fields support
+
+## Requirements
+
+- NetBox 4.2 or later
+- Python 3.10 or later
 
 ## Installation
 
