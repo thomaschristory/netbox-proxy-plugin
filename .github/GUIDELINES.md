@@ -4,11 +4,11 @@ Guidelines for AI agents and contributors working on this project.
 
 ## Project Overview
 
-**netbox-proxies** is a NetBox plugin that provides a web UI and REST API for managing HTTP proxy configurations. It integrates with NetBox's `PROXY_ROUTERS` system (introduced in NetBox v4.3) to allow administrators to define and manage proxy settings from within the NetBox interface.
+**netbox-proxy-plugin** is a NetBox plugin that provides a web UI and REST API for managing HTTP proxy configurations. It integrates with NetBox's `PROXY_ROUTERS` system (introduced in NetBox v4.3) to allow administrators to define and manage proxy settings from within the NetBox interface.
 
 - **Target compatibility**: NetBox 4.4, 4.5, and newer
 - **Python package name**: `netbox_proxies`
-- **Repository**: `thomaschristory/netbox-proxies`
+- **Repository**: `thomaschristory/netbox-proxy-plugin`
 
 ## Code Principles
 

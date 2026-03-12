@@ -1,4 +1,4 @@
-# netbox-proxies
+# netbox-proxy-plugin
 
 A [NetBox](https://github.com/netbox-community/netbox) plugin for managing HTTP proxy configurations through the NetBox web interface and REST API.
 
@@ -25,13 +25,13 @@ This plugin integrates with NetBox's [proxy routing system](https://github.com/n
 ### 1. Install the package
 
 ```bash
-pip install netbox-proxies
+pip install netbox-proxy-plugin
 ```
 
 Or for development:
 
 ```bash
-cd netbox-proxies
+cd netbox-proxy-plugin
 pip install -e .
 ```
 
