@@ -12,6 +12,7 @@ requires-python = ">=3.10"
 authors = [
     {name = "thomaschristory"},
 ]
+keywords = ["netbox", "netbox-plugin", "proxy", "http-proxy", "socks"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Framework :: Django",
@@ -23,9 +24,27 @@ classifiers = [
 Homepage = "https://github.com/thomaschristory/netbox-proxy-plugin"
 Repository = "https://github.com/thomaschristory/netbox-proxy-plugin"
 Issues = "https://github.com/thomaschristory/netbox-proxy-plugin/issues"
+Documentation = "https://github.com/thomaschristory/netbox-proxy-plugin#readme"
+Changelog = "https://github.com/thomaschristory/netbox-proxy-plugin/blob/main/CHANGELOG.md"
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+]
 
 [tool.hatch.build.targets.wheel]
 packages = ["netbox_proxy_plugin"]
 
 [tool.hatch.build.targets.sdist]
-include = ["netbox_proxy_plugin/**", "LICENSE", "README.md"]
+include = ["netbox_proxy_plugin/**", "LICENSE", "README.md", "CHANGELOG.md"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+
+[tool.ruff.lint.isort]
+known-third-party = ["django", "django_filters", "django_tables2"]
+known-first-party = ["netbox_proxy_plugin"]
