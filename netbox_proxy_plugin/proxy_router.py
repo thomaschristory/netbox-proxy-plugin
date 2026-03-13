@@ -65,9 +65,7 @@ class PluginProxyRouter:
         # Narrow by routing tag when we can identify the subsystem.
         routing_type = self._detect_routing(url, context)
         if routing_type:
-            proxies = proxies.filter(
-                Q(routing__contains=[routing_type]) | Q(routing=[])
-            )
+            proxies = proxies.filter(Q(routing__contains=[routing_type]) | Q(routing=[]))
 
         proxy = proxies.first()
         if proxy is None:
