@@ -46,3 +46,4 @@ dev/
 .coverage
 htmlcov/
 .pytest_cache/
+CLAUDE.md
