@@ -1,6 +1,8 @@
 # netbox-proxy-plugin
 
 [![CI](https://github.com/thomaschristory/netbox-proxy-plugin/actions/workflows/ci.yml/badge.svg)](https://github.com/thomaschristory/netbox-proxy-plugin/actions/workflows/ci.yml)
+[![PyPI](https://img.shields.io/pypi/v/netbox-proxy-plugin)](https://pypi.org/project/netbox-proxy-plugin/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/netbox-proxy-plugin)](https://pypi.org/project/netbox-proxy-plugin/)
 [![License](https://img.shields.io/github/license/thomaschristory/netbox-proxy-plugin)](https://github.com/thomaschristory/netbox-proxy-plugin/blob/main/LICENSE)
 
 A [NetBox](https://github.com/netbox-community/netbox) plugin for managing HTTP proxy configurations through the NetBox web interface and REST API.
