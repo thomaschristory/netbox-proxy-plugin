@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "netbox-proxy-plugin"
-version = "0.1.2"
+version = "0.1.3"
 description = "NetBox plugin for managing HTTP proxy configurations"
 readme = "README.md"
 license = "Apache-2.0"

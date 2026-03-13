@@ -32,6 +32,7 @@ Thumbs.db
 
 # AI / MCP
 .mcp.json
+CLAUDE.md
 
 # uv
 uv.lock

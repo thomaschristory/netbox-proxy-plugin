@@ -1,5 +1,3 @@
-from urllib.parse import urlparse
-
 from django.db.models import Q
 
 # Map client class paths to routing choice values.  NetBox 4.5 passes the
@@ -35,10 +33,6 @@ class PluginProxyRouter:
     """
 
     @staticmethod
-    def _get_protocol_from_url(url):
-        return urlparse(url).scheme
-
-    @staticmethod
     def _detect_routing(url, context):
         """Determine the routing tag from the caller context or URL."""
         if context and "client" in context:
@@ -66,13 +60,7 @@ class PluginProxyRouter:
     def route(self, url=None, protocol=None, context=None):
         from .models import Proxy
 
-        if url and protocol is None:
-            protocol = self._get_protocol_from_url(url)
-
         proxies = Proxy.objects.all()
-
-        if protocol:
-            proxies = proxies.filter(protocol=protocol)
 
         # Narrow by routing tag when we can identify the subsystem.
         routing_type = self._detect_routing(url, context)
@@ -81,8 +69,12 @@ class PluginProxyRouter:
                 Q(routing__contains=[routing_type]) | Q(routing=[])
             )
 
-        result = {}
-        for proxy in proxies:
-            result[proxy.protocol] = proxy.url
+        proxy = proxies.first()
+        if proxy is None:
+            return None
 
-        return result or None
+        # Map both http and https targets to the proxy URL.  The proxy
+        # protocol (how the client talks to the proxy) is independent of
+        # the target protocol.  An HTTP proxy handles HTTPS via CONNECT.
+        proxy_url = proxy.url
+        return {"http": proxy_url, "https": proxy_url}

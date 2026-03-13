@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.3] - 2025-03-13
+
+### Fixed
+
+- Proxy router no longer filters by protocol, allowing HTTP proxies to handle HTTPS targets (#9)
+- Remove dead `_get_protocol_from_url` method and unused `urlparse` import
+
 ## [0.1.2] - 2025-03-12
 
 ### Changed
@@ -44,7 +51,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Docker-based development environment (`dev/`)
 - Dual compatibility: installs on NetBox 4.4 (UI & API), full routing on 4.5+
 
-[Unreleased]: https://github.com/thomaschristory/netbox-proxy-plugin/compare/v0.1.2...HEAD
+[Unreleased]: https://github.com/thomaschristory/netbox-proxy-plugin/compare/v0.1.3...HEAD
+[0.1.3]: https://github.com/thomaschristory/netbox-proxy-plugin/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/thomaschristory/netbox-proxy-plugin/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/thomaschristory/netbox-proxy-plugin/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/thomaschristory/netbox-proxy-plugin/releases/tag/v0.1.0
